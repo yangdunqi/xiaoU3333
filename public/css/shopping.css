@@ -1,0 +1,169 @@
+/* 统一编码 */
+@charset "utf-8";
+.header .top>h1 {
+    position: relative;
+    width: 328px;
+    margin-top: 32px;
+    font-size: 24px;
+    color: #5f5f5f;
+    font:  24px/41px "微软雅黑";
+}
+.header .top>h1>img {
+    margin-right: 40px;
+}
+.header .top>h1::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    right: 82px;
+    margin: 0 20px 0 24px;
+    background-color: #efefef;
+}
+.header .top .left {
+    margin-top: 40px;
+}
+.header .top .left form>span.yellow {
+    color: #ff6707;
+    font-weight: 900;
+    font-size: 20px;
+    top: 10px;
+    left: 7px;
+}
+/* 主体 */
+.main .list {
+    height: 90px;
+    padding-top: 20px;
+    font: 12px/18px "微软雅黑";
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+.main .list>.sp>span {
+    float: left;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #d0d0d0;
+    margin: 0 12px ;
+}
+.main .list>.sp {
+    width: 430px;
+    text-align: left;
+}
+.main .list>.sp>div p {
+    color: #2f2f2f;
+    width: 294px;
+}
+.main .list>.sp>div>div {
+    color: #7c7c7c;
+    margin-top: 16px;
+}
+.main .list>.sp>div>div>span {
+    margin-right: 26px;
+}
+.main .list>.dj {
+    width: 244px;
+    color: #2d2d2d;
+}
+.main .list>.number {
+    width: 106px;
+}
+.main .list>.number>div {
+    width: 100px;
+    height: 28px;
+    border: 1px solid #cecece;
+}
+.main .list>.number>div>span {
+    float: left;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #cecece;
+}
+.main .list>.number>div>span.fn {
+    border-left: 1px solid #cecece;
+    color: #5e5e5e;
+}
+.main .list>.number>div>span.tt {
+    width: 42px;
+}
+.main .list>.xj {
+    width: 298px;
+    color: #fe7a30;
+}
+.main .list>.xj>span {
+    color: #696969;
+}
+.main .list>.cz {
+    width: 112px;
+    text-align: left;
+}
+.main .list>.cz .color {
+    color: #fe7a30;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.main .inner .one {
+    height: 41px;
+    width: 100%;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    font: 12px/41px "微软雅黑";
+}
+.main .inner .one .sp {
+    text-align: center;
+}
+.main .one>.sp>span {
+    margin-top: 13px;
+}
+.main .red {
+    background-color: #fef9f6;
+}
+.main .red>.sp>span {
+    border-color: #f86a16;
+}
+.main>.inner>.end {
+    height: 100px;
+    background-color: #f9f9f9;
+    margin: 38px 0 26px 0;
+}
+.main>.inner>.end .sp>p {
+    color: #f46008;
+    margin-left: 30px;
+}
+.main>.inner>.end .rightt {
+    width: 254px;
+}
+.main>.inner>.end .rightt .onee span {
+    color: #f46008;
+}
+.main>.inner>.end .rightt .twoo {
+    padding: 13px 0 0 13px;
+    text-align: left;
+}
+.main>.inner>.end .rightt .twoo p {
+    line-height: 1;
+    margin-bottom: 12px;
+}
+.main>.inner>.end .rightt .twoo p span {
+    font-size: 14px;
+    color: #f46008;
+    font-weight: 700;
+}
+.main>.inner>.bottom {
+    height: 76px
+}
+.main>.inner>.bottom>div {
+    font: 18px/44px "微软雅黑";
+    width: 184px;
+    height: 44px;
+    border: 1px solid #f26b11;
+    color: #f76b14;
+    text-align: center;
+    margin-left: 22px;
+}
+.main>.inner>.bottom>div:nth-last-of-type(2) {
+    background-color: #f26b11;
+    color: white;
+}

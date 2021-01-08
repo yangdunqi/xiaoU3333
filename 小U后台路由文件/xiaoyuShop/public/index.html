@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>小U商城</title>
+    <link rel="icon" href="img/logo.ico">
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="css/pub.css">
+    <link rel="stylesheet" href="css/pub2.css">
+    <link rel="stylesheet" href="css/index2.css">
+    <link rel="stylesheet" href="ico/iconfont.css">
+    <link rel="stylesheet" href="./assets/swiper-master/package/swiper-bundle.min.css">
+    <script src="./assets/swiper-master/package/swiper-bundle.min.js"></script>
+    
+    <script src="./js/template-web.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<script>
+    
+    (async function () {
+      let [err,arr]= await sendAjax('/testjst');
+      if(arr.code == 200){
+        $('.uname_uid').hide();
+        $('#Uname').prepend(`<li class="butan" >
+                    <a href="#" class="a4"style="color: red;">欢迎用户${arr.data.uname}</a>
+                </li>`);
+      }
+    })();
+</script>
+<body>
+    <!-- pub -->
+    <div class="headbei" id="dingbu">
+        <div class="head1 layout">
+            <ul class="head1_zuo clearfix" >
+                <li>
+                    <a href=""> 网站导航 <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i>
+                    </a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li>
+                    <a href=""> 商家入驻 <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i>
+                    </a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li>
+                    <a href=""> 客户服务 <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i>
+                    </a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li class="butan">
+                    <a href="" class="a5"> <i class="iconfont icon-dizhi dizhi"></i>北京 <i
+                            class="iconfont icon-sanjiaodown xiajiantou2"></i> </a>
+                </li>
+            </ul>
+            <ul class="head1_you clearfix" id="Uname">
+                <li class="butan uname_uid">
+                    <a href="#" class="a4"> 请登录</a>
+                </li>
+                <li class="li1 butan uname_uid">
+                    <a href="" class="a3"> 注册有礼</a>
+                </li>
+                <li>
+                    <a href=""> 我的订单 <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i>
+                    </a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li>
+                    <a href=""> 我的易购 <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i>
+                    </a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li class="butan">
+                    <a href="">小U会员</a>
+                </li>
+                <li>
+                    <a href="" class="gouwuche"> <i class="iconfont icon-gouwuchekong gouwu"></i> 购物车<span>0</span> <i
+                            class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i></a>
+                    <div class="tanchuang"></div>
+                </li>
+                <li class="butan">
+                    <a href=""> 易付宝 </a>
+                </li>
+                <li class="butan">
+                    <a href=""> 企业采购 </a>
+                </li>
+                <li>
+                    <a href=""> 我的小U <i class="iconfont icon-jiantou9 xiajiantou"></i>
+                        <i class="iconfont icon-shangjiantou2 shangjiantou2"></i></a>
+                    <div class="tanchuang"></div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- biaoti -->
+    <div class="biaoti layout clearfix">
+        <div class="tubiao">
+            <img src="img/首页_03.jpg" alt="#">
+        </div>
+        <div class="sousuo">
+            <ul class="ssk">
+                <li class="clearfix">
+                    <form action="">
+                        <input class="shuru iconfont" type="text" id="index_ipt" placeholder="&#xe643; 跨店每300减30">
+                        <input type="submit " class="ssk1 " value="搜索" id="index_submit">
+                    </form>
+                </li>
+                <li class="tishici">
+                    <ul class="clearfix" id="daohang">
+                        <li> <a href="" class="tsc1"> 手机</a></li>
+                        <li> <a href="">电动牙刷</a> </li>
+                        <li> <a href="">电视</a> </li>
+                        <li> <a href="">海尔空调</a> </li>
+                        <li> <a href="">洗衣机</a> </li>
+                        <li> <a href="">茅台</a> </li>
+                        <li> <a href="">热水器</a> </li>
+                        <li> <a href=""> ipad</a></li>
+                        <li> <a href=""> 微波炉</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 大导航标题 -->
+    <div class="hangbiao layout clearfix">
+        <div class="hangbiao1 ">
+            <h3> <i class="iconfont icon--lanmuguanli"></i> 全部商品分类
+            </h3>
+        </div>
+        <div class="hangbiao2">
+            <ul>
+                <li>
+                    <a href="#">限时抢购</a>
+                </li>
+                <li>
+                    <a href="#">红孩子</a>
+                </li>
+                <li>
+                    <a href="#">小U超市</a>
+                </li>
+                <li>
+                    <a href="#">电器城</a>
+                </li>
+                <li>
+                    <a href="#">生活家电</a>
+                </li>
+                <li>
+                    <a href="#">时尚服饰</a>
+                </li>
+                <li>
+                    <a href="#">金融</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- banner区域 -->
+    <div class="banner">
+        <div class="xiaobiaobei layout">
+            <!-- <img src="img/banner1.jpg" alt="#"> -->
+            <div class="daobiao">
+                <ul class="xiaodao1">
+                    <li class="xiaodao2 xiaodao3">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc1"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                    <li class="xiaodao2 xiaodao4">
+                        <a href="">手机</a>
+                        <a href="">运营商</a>
+                        <a href="" class="xiaodao1_a1">智能数码</a>
+                        <div class="tc2"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- banner轮播 -->
+            <div class="banner_lunbo">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- <div class="swiper-slide swiper_none"><img src="./images/banner.webp" alt=""></div>
+                        <div class="swiper-slide swiper_none"><img src="./images/banner.jpg" alt=""></div>
+                        <div class="swiper-slide swiper_none"><img src="./images/banner01.jpg" alt=""></div>
+                        <div class="swiper-slide swiper_none"><img src="./images/login_banner.jpg" alt=""></div> -->
+
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 限时抢购区 -->
+    <div class="xianqiang" id="xianqiang">
+        <div class="xianqiang1 layout clearfix">
+            <div class="xsqg ">
+                <div class="xsqgtop">
+                    <div class="xsqgtop_zuo">
+                        <img src="img/首页_13.jpg" alt="#">倒计时下一场
+                        <span class="s1">03</span>
+                        <span>41</span>
+                        <span>16</span>
+                    </div>
+                </div>
+                <div class="xsqgfoot">
+                    <ul class="clearfix" id="xsqgCont">
+                        <!-- <li class="aicao aicao_none">
+                            <a href="">
+                                <div>
+                                    <div class="aicaobao"><img src="img/首页1_13_03.jpg" alt="#"></div>
+                                    <p>壹宝泡脚足浴包艾草艾叶</p>
+                                    <span class="jiage">¥7.5</span> <del>¥17.8</del>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="aicao aicao_none">
+                            <a href="">
+                                <div>
+                                    <div class="aicaobao"><img src="img/首页1_13_03.jpg" alt="#"></div>
+                                    <p>壹宝泡脚足浴包艾草艾叶</p>
+                                    <span class="jiage">¥7.5</span> <del>¥17.8</del>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="aicao aicao_none">
+                            <a href="">
+                                <div>
+                                    <div class="aicaobao"><img src="img/首页1_13_03.jpg" alt="#"></div>
+                                    <p>壹宝泡脚足浴包艾草艾叶</p>
+                                    <span class="jiage">¥7.5</span> <del>¥17.8</del>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="aicao aicao4 aicao_none">
+                            <a href="">
+                                <div>
+                                    <div class="aicaobao"><img src="img/首页1_13_03.jpg" alt="#"></div>
+                                    <p>壹宝泡脚足浴包艾草艾叶</p>
+                                    <span class="jiage">¥7.5</span> <del>¥17.8</del>
+                                </div>
+                            </a>
+                        </li> -->
+
+                    </ul>
+                    <!-- 限时抢购js -->
+                    <!-- <script>
+                        (async () => {
+                            let [err, arr] = await sendAjax('/flash_sale');
+
+                            arr = arr[0].first_qg;
+                            console.log(arr);
+                            arr.forEach(item => {
+                                $('#xsqgCont').append(`<li class="aicao">
+                                    <a href="">
+                                        <div>
+                                            <div class="aicaobao"><img src="${item.image_url}" alt="#"></div>
+                                            <p>${item.goods_name}</p>
+                                            <span class="jiage">¥${item.assem_price}</span> <del>¥${item.goods_price}</del>
+
+                                        </div>
+                                    </a>
+                                </li>`);
+                            });
+                        })()
+                    </script> -->
+                </div>
+            </div>
+            <div class="dajuhui">
+                <div class="dajuhuitop clearfix">
+                    <div class="djhtop_zuo">
+                        <h3>大聚惠</h3>
+                    </div>
+                    <div class="djhtop_you">
+                        <a href=""> 更多 <i class="iconfont icon-rightarrow"></i></a>
+                    </div>
+                </div>
+                <div class="dajuhuifoot">
+                    <a href=""><img src="img/首页_15.jpg" alt="#"></a>
+                    <div class="sanzhi">
+                        <ul class="clearfix">
+                            <li class="sanzhi1">
+                                <a href="">
+                                    <div class="szss">
+                                        <img src="img/首页_25.jpg" alt="">
+                                        <p> 满400减280</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="szss">
+                                        <img src="img/首页_25.jpg" alt="">
+                                        <p> 满400减280</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sanzhi3">
+                                <a href="">
+                                    <div class="szss">
+                                        <img src="img/首页_25.jpg" alt="">
+                                        <p> 满400减280</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 排行榜 人气好货 -->
+    <div class="paihang" id="haohuo">
+        <div class="paihangbang layout clearfix">
+            <div class="phb">
+                <div class="phb_top clearfix">
+                    <div class="phb_top1 clearfix">
+                        <div class="top11"></div>
+                        <h3>排行榜</h3>
+                    </div>
+                    <div class="phb_top2">
+                        <a href=""> 更多 <i class="iconfont icon-rightarrow"></i></a>
+                    </div>
+                </div>
+                <!-- 模板 -->
+                <script type="text/html" id="temp">
+                    <div class="phb_zhong">
+                        <ul>
+                            <li>
+
+                                {{each data value index}}
+                                <a href="#">{{ value.second_name }}</a>
+                                {{/each}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="phbfoot">
+                        {{each data value index}}
+                        <ul>
+                            {{each value.data value index}}
+                            <a href="#">
+                                <li class="clearfix" goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                    <div class="phbfootzuo">
+                                        <img src={{value.image_url}} alt="#">
+                                    </div>
+                                    <div class="phbfootyou">
+                                        <p>{{value.goods_name}}</p>
+                                        <span class="jinfang">¥{{value.goods_price}}</span>
+
+                                    </div>
+                                </li>
+                            </a>
+                            {{/each}}
+
+
+                        </ul>
+                        {{/each}}
+                    </div>
+                </script>
+                <!-- <div class="phb_zhong">
+                    <ul>
+                        <li>
+                            <a href="#" class="jingxuan">
+                                精选
+                            </a>
+                            <a href="#">
+                                休闲食品
+                            </a>
+                            <a href="#">
+                                纸品清洁
+                            </a>
+                            <a href="#">
+                                苏宁生鲜
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="phbfoot">
+                    <ul>
+                        <a href="">
+                            <li class="clearfix">
+                                <div class="phbfootzuo">
+                                    <img src="img/首页_04.jpg" alt="#">
+                                </div>
+                                <div class="phbfootyou">
+                                    <p>金纺 衣物柔顺剂 亲肤系列 纯净温和 衣物护理<br>剂4L婴幼儿衣物及内衣适用</p>
+                                    <span class="jinfang">¥39.90</span>
+
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="clearfix">
+                                <div class="phbfootzuo">
+                                    <img src="img/首页_04.jpg" alt="#">
+                                </div>
+                                <div class="phbfootyou">
+                                    <p>金纺 衣物柔顺剂 亲肤系列 纯净温和 衣物护理<br>剂4L婴幼儿衣物及内衣适用</p>
+                                    <span class="jinfang">¥39.90</span>
+
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="clearfix">
+                                <div class="phbfootzuo">
+                                    <img src="img/首页_04.jpg" alt="#">
+                                </div>
+                                <div class="phbfootyou">
+                                    <p>金纺 衣物柔顺剂 亲肤系列 纯净温和 衣物护理<br>剂4L婴幼儿衣物及内衣适用</p>
+                                    <span class="jinfang">¥39.90</span>
+
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div> -->
+                <!-- <script>
+                    (async () => {
+                        let [err, data] = await sendAjax('/ranking');
+                        data = {
+                            data
+                        };
+                        // 数据和模板绑定生成HTML片段
+                        var tem = template('temp', data);
+                        $('.phb_top').after(tem);
+                        $('.phb_zhong ul li a').eq(0).addClass('jingxuan');
+                        // 添加事件
+                        $.each($('.phb_zhong ul li a'), function (index, item) {
+                            $(item).mouseenter(function () {
+                                $(item).addClass('jingxuan').siblings().removeClass('jingxuan');
+                                $('.phb .phbfoot ul').eq(index).show().siblings().hide();
+                            });
+                        });
+
+                    })();
+                </script> -->
+                <div class="deep">
+                    <ul class="clearfix">
+                        <li>
+                            <a class="deep1"></a>
+                        </li>
+                        <li>
+                            <a class="deep2"></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="renqi">
+                <div class="renqitop clearfix">
+                    <div class="renqitopzuo clearfix">
+                        <div class="top22"></div>
+                        <h3>人气好货</h3>
+                    </div>
+                    <div class="renqitopyou">
+                        <a href=""> 更多 <i class="iconfont icon-rightarrow"></i></a>
+                    </div>
+                </div>
+                <div class="renqifoot">
+                    <ul class="clearfix" id="goods_eval">
+                        <!-- <li class="renqitu1">
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="renqitu2">
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="renqitu3">
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="renqitu3">
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="renqitu3">
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="img/首页_05_03.jpg" alt=""></div>
+                                    <h3> PATEX </h3>
+                                    <p>大牌精选2.5折起</p>
+                                </div>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <!-- <script>
+                        (async () => {
+                            let [err, arr] = await sendAjax('/goods_eval');
+                            arr.data.forEach(item => {
+                                $('#goods_eval').append(` <li>
+                            <a href="#">
+                                <div>
+                                    <div class="zhentou"> <img src="${item.image_url}" alt=""></div>
+                                    <h3>${item.goods_name}</h3>
+                                    <p>${item.goods_introduce}</p>
+                                </div>
+                            </a>
+                        </li>`);
+                            });
+                            $("#goods_eval li").eq(0).addClass('renqitu1');
+                            $("#goods_eval li").eq(4).addClass('renqitu2').nextAll().addClass('renqitu3');
+                        })()
+                    </script> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 三张图 -->
+    <div class="szt">
+        <div class="szt1 layout">
+            <ul class="clearfix">
+                <li>
+                    <a href=""><img src="img/首页_11.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/首页_12.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/首页_14.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--发现好货  -->
+    <div class="faxianbei">
+        <div class="fxhh layout clearfix">
+            <div class="fxhhzuo">
+                <a href=""> <img src="img/首页_01.jpg" alt=""></a>
+            </div>
+            <div class="fxhhyou">
+                <ul class="clearfix" id="fx_goods">
+                    <!-- 使用template模板引擎 -->
+                    <script type="text/html" id="good_temp">
+                        {{ each data value index}}
+                        <li goods_id={{ value.goods_id }} onclick="toShow(this)">
+                            <a href="#">
+                                <div class="fxhhyou1">
+                                    <div class="kouhong"><img src={{ value.image_url }} alt=""></div>
+                                    <p>{{ value.goods_name }}</p>
+                                </div>
+                            </a>
+                        </li>
+                        {{ /each }}
+                    </script>
+                    <li>
+                        <a href="#">
+                            <div class="fxhhyou1">
+                                <div class="kouhong"><img src="img/首页_02_03.jpg" alt=""></div>
+                                <p>Mac 限量口红</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="fxhhyou1">
+                                <div class="kouhong"><img src="img/首页_02_03.jpg" alt=""></div>
+                                <p>Mac 限量口红</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="fxhhyou1">
+                                <div class="kouhong"><img src="img/首页_02_03.jpg" alt=""></div>
+                                <p>Mac 限量口红</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="fxhhyou1">
+                                <div class="kouhong"><img src="img/首页_02_03.jpg" alt=""></div>
+                                <p>Mac 限量口红</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="fxhhyou1">
+                                <div class="kouhong"><img src="img/首页_02_03.jpg" alt=""></div>
+                                <p>Mac 限量口红</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <a href="">
+                    <div class="huakuai"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 服装配饰 -->
+    <div class="fuzhuangbei4kuai" id="fushiyundong">
+        <div class="fuzhuang4 layout" id="fuzhuang4">
+            <!-- trample模板引擎 -->
+            <script type="text/html" id="fs_temp">
+                
+                <ul class="fyjy clearfix" id="fyjy">
+                    
+                    {{each data value index}}
+                    <li class="fyjy1">
+                        <div class="fzps">
+                            <div class="fzpstop clearfix">
+                                <div class="fzpstop1 clearfix">
+                                    <div class="fzpstop11"></div>
+                                    <h3>{{ value.second_name }}</h3>
+                                    <img src="img/首页_091.jpg" alt="">
+                                </div>
+                                <div class="fzpstop12">
+                                    {{each value.cate_thired value index}}
+                                    <a href="#">{{ value.thired_name }}</a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            <div class="fzpsfootzuo">
+                                <a href=""><img src= {{imgs[index]}} alt=""></a>
+                            </div>
+                            <div class="fzpsfootyou clearfix">
+                                <ul>
+                                    {{each value.goods_list value index}}
+                                        <li class="fzpsfootyou1" goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                                <h3></h3>
+                                                <p>{{ value.goods_name }}</p>
+                                                <img src= {{ value.image_url }} alt="">
+                                        </li>
+                                    {{/each}}
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </script>
+            <!-- <ul class="fyjy clearfix" id="fyjy">
+                <li class="fyjy1 fyjy2">
+                    <div class="fzps">
+                        <div class="fzpstop clearfix">
+                            <div class="fzpstop1 clearfix">
+                                <div class="fzpstop11"></div>
+                                <h3>服装配饰</h3>
+                                <img src="img/首页_09.jpg" alt="">
+                            </div>
+                            <div class="fzpstop12">
+                                <a href="">骆驼鞋靴</a>
+                                <a href="">珠宝年货节</a>
+                                <a href="">洁丽雅</a>
+                                <a href="">海澜之家</a>
+                            </div>
+                        </div>
+                        <div class="fzpsfootzuo">
+                            <a href=""><img src="img/首页_07.jpg" alt=""></a>
+                        </div>
+                        <div class="fzpsfootyou clearfix">
+                            <ul>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10_02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fyjy1">
+                    <div class="fzps">
+                        <div class="fzpstop clearfix">
+                            <div class="fzpstop1 clearfix">
+                                <div class="fzpstop11"></div>
+                                <h3>服装配饰</h3>
+                                <img src="img/首页_09.jpg" alt="">
+                            </div>
+                            <div class="fzpstop12">
+                                <a href="">骆驼鞋靴</a>
+                                <a href="">珠宝年货节</a>
+                                <a href="">洁丽雅</a>
+                                <a href="">海澜之家</a>
+                            </div>
+                        </div>
+                        <div class="fzpsfootzuo">
+                            <a href=""> <img src="img/首页_07.jpg" alt=""></a>
+                        </div>
+                        <div class="fzpsfootyou clearfix">
+                            <ul>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fyjy1 fyjy2 fyjy4">
+                    <div class="fzps">
+                        <div class="fzpstop clearfix">
+                            <div class="fzpstop1 clearfix">
+                                <div class="fzpstop11"></div>
+                                <h3>服装配饰</h3>
+                                <img src="img/首页_09.jpg" alt="">
+                            </div>
+                            <div class="fzpstop12">
+                                <a href="">骆驼鞋靴</a>
+                                <a href="">珠宝年货节</a>
+                                <a href="">洁丽雅</a>
+                                <a href="">海澜之家</a>
+                            </div>
+                        </div>
+                        <div class="fzpsfootzuo">
+                            <a href=""> <img src="img/首页_07.jpg" alt=""></a>
+                        </div>
+                        <div class="fzpsfootyou clearfix">
+                            <ul>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fyjy1 fyjy4">
+                    <div class="fzps">
+                        <div class="fzpstop clearfix">
+                            <div class="fzpstop1 clearfix">
+                                <div class="fzpstop11"></div>
+                                <h3>服装配饰</h3>
+                                <img src="img/首页_09.jpg" alt="">
+                            </div>
+                            <div class="fzpstop12">
+                                <a href="">骆驼鞋靴</a>
+                                <a href="">珠宝年货节</a>
+                                <a href="">洁丽雅</a>
+                                <a href="">海澜之家</a>
+                            </div>
+                        </div>
+                        <div class="fzpsfootzuo">
+                            <a href=""> <img src="img/首页_07.jpg" alt=""></a>
+                        </div>
+                        <div class="fzpsfootyou clearfix">
+                            <ul>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="fzpsfootyou1">
+                                    <a href="">
+                                        <h3>赢888元红包</h3>
+                                        <p>健康中国年</p>
+                                        <img src="img/首页_10.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+    <!-- 三张图 -->
+    <div class="szt">
+        <div class="szt1 layout">
+            <ul class="clearfix">
+                <li>
+                    <a href=""><img src="img/首页_11.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/首页_12.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/首页_14.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 猜你喜欢 -->
+    <div class="cainibei" id="cainixihuan">
+        <div class="cainibeitop clearfix layout">
+            <div class="cainikuai"></div>
+            <h2>猜你喜欢</h2>
+        </div>
+        <div class="cainixihuan layout">
+            <ul class="clearfix" id="guessGoods">
+                <script type="text/html" id="end_temp">
+                    {{ each data value index }}
+                        <li goods_id={{ value.goods_id }} onclick="toShow(this)">
+                            <a href="#">
+                                <div class="tuanzi">
+                                    <img src={{ value.image_url }} alt=""></div>
+                                <p>{{ value.goods_name }}</p>
+                            </a>
+                            <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥{{ value.goods_price }}</span>
+                                <a href="" class="cnxhzxs">详情</a></div>
+        
+                        </li>
+
+                    {{ /each }}
+                </script>
+                <!-- <li class="cnxhdi1">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi1">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi1 cnxhdi2">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi2">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi2">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi2">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li>
+                <li class="cnxhdi2">
+                    <a href="#">
+                        <div class="tuanzi">
+                            <img src="img/首页_16_03.jpg" alt=""></div>
+                        <p>【三只松鼠_萌心团子138g】糖果棉<br>花糖干吃汤圆糕点草莓味麻薯糯米糍</p>
+                    </a>
+                    <div class="cainixihuanjiage clearfix"> <span class="cnxhjg1">¥25.90</span>
+                        <a href="" class="cnxhzxs">详情</a></div>
+
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="cebian">
+        <ul class="cebianlan">
+            <li>
+                <a href="#xianqiang" class="cebianlan1">
+                    特色优选
+                </a>
+            </li>
+            <li>
+                <a href="#haohuo">
+                    发现好货
+                </a>
+            </li>
+            <li>
+                <a href="#fushiyundong">
+                    服饰运动
+                </a>
+            </li>
+            <li>
+                <a href="#fushiyundong">
+                    金融阅读
+                </a>
+            </li>
+            <li>
+                <a href="#cainixihuan" class="cebianlan2">
+                    猜你喜欢
+                </a>
+            </li>
+            <li>
+                <a href="#dingbu" class="cebianlan3">
+                    <i class="iconfont icon-shangjiantou"></i>顶部
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- END -->
+    <div class="endbei">
+        <div class="end layout">
+            <div class="endheng endheng1">
+            </div>
+            <span>END</span>
+            <div class="endheng">
+            </div>
+        </div>
+    </div>
+    <!-- 最下面 -->
+    <div class="footerbei1">
+        <div class="footer1 layout">
+            <ul class="footerda clearfix">
+                <li class="footerda1">
+                    <ul class="footerxiao">
+                        <li class="footerxiao1"> 购物指南</li>
+                        <li class="footerxiao2"> <a href="">服务流程</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                    </ul>
+                </li>
+                <li class="footerda1">
+                    <ul class="footerxiao">
+                        <li class="footerxiao1"> 购物指南</li>
+                        <li class="footerxiao2"> <a href="">服务流程</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                    </ul>
+                </li>
+                <li class="footerda1">
+                    <ul class="footerxiao">
+                        <li class="footerxiao1">购物指南</li>
+                        <li class="footerxiao2"> <a href="">服务流程</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                    </ul>
+                </li>
+                <li class="footerda1">
+                    <ul class="footerxiao">
+                        <li class="footerxiao1"> 购物指南</li>
+                        <li class="footerxiao2"> <a href="">服务流程</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                    </ul>
+                </li>
+                <li class="footerda1">
+                    <ul class="footerxiao">
+                        <li class="footerxiao1"> 购物指南</li>
+                        <li class="footerxiao2"> <a href="">服务流程</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                        <li class="footerxiao2"> <a href="">配送方式</a></li>
+                        <li class="footerxiao2"> <a href="">支付方式</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footerbei2">
+        <div class="footer2 layout">
+            <p class="footer3">Copyright&copy; 2010-2016 小U商城 版权所有 保留一切权利</p>
+            <p>Copyright&copy; 2010-2016 小U商城 版权所有 保留一切权利 小U商城 版权所有 保留一切权利</p>
+        </div>
+    </div>
+</body>
+<script>
+    // // 获取轮播
+    // async function demo() {
+    //     let [err, data] = await sendAjax('http://localhost:2222/banner');
+    //     console.log(data);
+    // }
+    // demo();
+</script>
+
+</html>

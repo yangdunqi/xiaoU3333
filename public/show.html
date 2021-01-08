@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小U商城商品详情页</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/show.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/show.js"></script>
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+    <!-- 定义头部导航栏 -->
+    <div class="topnav">
+        <div class="inner clearfix">
+            <ul class="left fl">
+                <li class="iconfont">
+                    <a href="#">网站导航</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <a href="#">商家入驻</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <a href="#">客户服务</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <span class="dis">&#xe61e;</span>
+                    <a href="#">北京</a><span class="jt">&#xe772;</span>
+                </li>
+            </ul>
+            <ul class="right fr">
+                <li class="iconfont">
+                    <a href="./login.html" target="_blank">请登录</a>
+                </li>
+                <li class="iconfont">
+                    <a href="./enroll.html" target="_blank">注册有礼</a>
+                </li>
+                <li class="iconfont">
+                    <a href="#">我的订单</a><span>&#xe773;</span>
+                </li>
+                <li class="iconfont">
+                    <a href="#">我的易购</a><span>&#xe773;
+                    </span>
+
+                </li>
+                <li class="iconfont">
+                    <a href="#">小U会员</a>
+                </li>
+                <li class="iconfont">
+                    &#xe6aa;
+                    <a href="./shopping.html" target="_blank">购物车 0</a>
+                    &#xe773;
+
+                </li>
+                <li class="iconfont">
+                    <a href="#">易付宝</a>
+                </li>
+                <li class="iconfont">
+                    <a href="#">企业采购</a>
+                </li>
+                <li class="iconfont">
+                    <a href="#">手机小U</a><span>&#xe773;
+                    </span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 头部搜索框 -->
+    <div class="header">
+        <div class="inner clearfix">
+            <div class="top">
+                <h1 class="fl"><img src="./images/logo.png" alt="小U商城"></h1>
+                <div class="left fl">
+                    <form action="#" class="clearfix">
+                        <span class="iconfont">&#xe616;
+                        </span>
+                        <input type="text" placeholder="跨店每300减30" id="index_ipt" onfocus="gotoShow(this)">
+                        <input type="button" value="搜索" id="index_submit">
+                    </form>
+                    <ul class="list clearfix" id="daohang">
+                        <li><a href="#">手机</a></li>
+                        <li><a href="#">电动牙刷</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">海尔空调</a></li>
+                        <li><a href="#">洗衣机</a></li>
+                        <li><a href="#">茅台</a></li>
+                        <li><a href="#">热水器</a></li>
+                        <li><a href="#">ipad</a></li>
+                        <li><a href="#">微波炉</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom clearfix">
+                <div class="title clearfix fl">
+                    <h2 class="fl iconfont">&#xe608;&nbsp; 全部商品分类</h2>
+                    <ul class="listNav">
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">手机</a></li>
+                                <li><a href="#">运营商</a></li>
+                                <li><a href="#">智能数码</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">空调</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">冰箱</a></li>
+                                <li><a href="#">洗衣机</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">厨卫大电</a></li>
+                                <li><a href="#">生活家电</a></li>
+                                <li><a href="#">厨具</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">电脑办公</a></li>
+                                <li><a href="#">相机</a></li>
+                                <li><a href="#">DIY</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">家居</a></li>
+                                <li><a href="#">家具</a></li>
+                                <li><a href="#">家装</a></li>
+                                <li><a href="#">家纺</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">食品</a></li>
+                                <li><a href="#">酒水</a></li>
+                                <li><a href="#">生鲜</a></li>
+                                <li><a href="#">特产</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">美妆</a></li>
+                                <li><a href="#">个护</a></li>
+                                <li><a href="#">清洁</a></li>
+                                <li><a href="#">宠物</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">母婴</a></li>
+                                <li><a href="#">玩具</a></li>
+                                <li><a href="#">车床</a></li>
+                                <li><a href="#">童装</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">运动</a></li>
+                                <li><a href="#">户外</a></li>
+                                <li><a href="#">足球</a></li>
+                                <li><a href="#">跑步机</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">男装</a></li>
+                                <li><a href="#">女装</a></li>
+                                <li><a href="#">内衣</a></li>
+                                <li><a href="#">鞋靴</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">箱包</a></li>
+                                <li><a href="#">钟表</a></li>
+                                <li><a href="#">珠宝</a></li>
+                                <li><a href="#">艺术</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">汽车</a></li>
+                                <li><a href="#">汽摩</a></li>
+                                <li><a href="#">二手车</a></li>
+                                <li><a href="#">车品</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">图书</a></li>
+                                <li><a href="#">艺术</a></li>
+                                <li><a href="#">原版</a></li>
+                                <li><a href="#">文学</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">医药健康</a></li>
+                                <li><a href="#">计生情趣</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">理财</a></li>
+                                <li><a href="#">分期</a></li>
+                                <li><a href="#">保险</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="list-right clearfix">
+                    <li><a href="#">限时抢购</a></li>
+                    <li><a href="#">红孩子</a></li>
+                    <li><a href="#">小U超市</a></li>
+                    <li><a href="#">电器城</a></li>
+                    <li><a href="#">生活家电</a></li>
+                    <li><a href="#">时尚服饰</a></li>
+                    <li><a href="#">金融</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="inner">
+            <div class="top clearfix">
+                <h3 id="layout_list"><i>首页</i>><i>家用电器</i>><i>电视机</i>><i>创维（SKYWOTH）</i></h3>
+                <div class="left fl">
+                    <img src="./images/xq1.png" alt="" id="first_img">
+                   
+                    <div class="clearfix">
+                        <div class="sousuo fr iconfont">&#xe6a8;</div>
+                    </div>
+                    <div class="list2 clearfix" id="shoops">
+                        <!-- 使用template模板引擎 -->
+                        <script type="text/html" id="shoops_temp">
+                            <div class="pulic"></div>
+                            {{ each goods_image item index }}
+                            <div><img src="{{ item.goods_image }}" alt=""></div>
+                            {{ /each }}
+                             <div class="pulic"></div>
+                        </script>
+                        <div class="pulic"></div>
+                        <div class="active"><img src="./images/xq6.png" alt=""></div>
+                        <div><img src="./images/xq7.png" alt=""></div>
+                        <div><img src="./images/xq8.png" alt=""></div>
+                        <div><img src="./images/xq9.png" alt=""></div>
+                        <div class="pulic"></div>
+                    </div>
+                </div>
+                <div class="right fl">
+                    <h3 id="goods_name">创维（SKYWORTH ） 60G20 60英寸电视人工智能4K超画质芯片HDR10智能网络超薄全面屏液晶平板电视机</h3>
+                    <p id="goods_text">【门店同款】立即抢购！9号不高于3199！前200名晒单送1399元JBL重低音！下单送苹果华为通用蓝牙耳机！旗舰声控电视，可家电互联。咨询客服有惊喜!全国联保官方正品。</p>
+                    <div class="jiage">
+                        <div class="box1 clearfix">
+                            <p class="fl">促销价</p>
+                            <span class="fl" id="goods_price">￥3199.00</span>
+                            <div class="fl">降价通知
+                                <div></div>
+                            </div>
+                            <span class="iconfont fr spann">&#xe600;<span>收藏</span></span>
+                        </div>
+                        <div class="box2 clearfix">
+                            <p class="fl">累计评价</p>
+                            <span class="fl">7800+</span>
+                        </div>
+                        <div class="box3 clearfix">
+                            <p class="fl">运费</p>
+                            <span class="fl">满19包邮</span>
+                        </div>
+                    </div>
+                    <div class="xinghao clearfix">
+                        <div class="left fl">选择型号</div>
+                        <div class="right fl" id="attr_list">
+                            <div>4K超大屏人工智能新品-7OG20</div>
+                            <div>全生态AI旗舰智慧屏新品-55H90</div>
+                            <div>全生态N高端智慧屏新品 55A8</div>
+                            <!-- <div>全生态AI旗舰智慧屏新品-55l</div> -->
+                        </div>
+                    </div>
+                    <div class="number clearfix">
+                        <div class="left fl">购买数量</div>
+                        <div class="right fl">
+                            <span class="fl">-</span>
+                            <span class="fl ttt">1</span>
+                            <span class="fl">+</span>
+                        </div>
+                    </div>
+                    <div class="shoppimg clearfix">
+                        <div><span class="iconfont icon">&#xe6c1;</span>加入购物车</div>
+                        <div>立即购买</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 等高布局 -->
+            <div class="col1">
+                <div class="col2 clearfix">
+                    <div class="left fl">
+                        <h3>商品推荐</h3>
+                        <ul class="listimg" id="showCont_temp">
+                            <!-- 使用template模板引擎 -->
+                            <script type="text/html" id="show_temp">
+                                {{ each data value index }}
+                                <li onclick="toShow(this)" goods_id={{ value.goods_id }}>
+                                    <img src="{{ value.image_url }}" alt="">
+                                    <p>{{ value. goods_name }}</p>
+                                    <div>￥{{ value.goods_price }}</div>
+                                </li>
+                                {{ /each }}
+                            </script>
+                        </ul>
+                    </div>
+                    <div class="right fl">
+                        <div class="topList ">
+                            <div class="topText clearfix">
+                                <div class="onee active" id="shoopJS">商品介绍</div>
+                                <div  class="none" id="ping_title">商品评价<span>(7000+)</span>
+                                    <div class="evaluate" id="pingjia"></div>
+                                </div>
+                                <div>售后保障</div>
+                                <div class="last"><span class="iconfont icon">&#xe6c1;</span>加入购物车</div>
+                            </div>
+                            <div class="text clearfix">
+                                <h3>产品参数：</h3>
+                                <ul class="fl">
+                                    <li>商品名称；创维(Skyworth)60G20</li>
+                                    <li>商品毛重；20.Okg</li>
+                                    <li>屏幕尺寸；58-60英寸</li>
+                                    <li>连接方式；无线/网线</li>
+                                    <li>能效等级；三级能效</li>
+                                </ul>
+                                <ul class="fl">
+                                    <li>商品名称；54611111111</li>
+                                    <li>商品产地；中国大陆</li>
+                                    <li>选购指数；10.0-8.0</li>
+                                    <li>网络连接；支持有线&无线</li>
+                                </ul>
+                                <ul class="fl">
+                                    <li>店铺；小u直营</li>
+                                    <li>观看距离；3m-4.5m (55-60英寸)</li>
+                                    <li>电视类型；全面屏A工智能电视·超薄电视</li>
+                                    <li>工作电压；220</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bottomList">
+                            <div class="col1">
+                                <div class="col2 clearfix">
+                                    <div class="left">
+                                        <div class="listTitle">
+                                            <h3>无后壳式结钩</h3>
+                                            <h4>简约精巧 告别笨重</h4>
+                                            <p>G20采用无后壳式结构，这种独特的结构使它的后壳变得简约精巧、不再笨重。</p>
+                                            <p>同时也让机身的一体化程度更高、更显轻薄。</p>
+                                        </div>
+                                        <img src="./images/xq11.png" alt="" id="imgCont1">
+                                        <div class="listTitle">
+                                            <h3>墨五黑边框</h3>
+                                            <h4>深邃墨玉黑 高颜值百搭</h4>
+                                            <p>G20采用深邃而有光泽的墨玉黑边框，飘目却又与家居环境相得益彰。</p>
+                                        </div>
+                                        <img src="./images/xq12.png" alt="" id="imgCont2">
+                                        <div class="listTitle">
+                                            <h3>酷开AI系统</h3>
+                                            <h4>懂内容更懂你</h4>
+                                            <p>酷开A系统全新智慧升级，基于A引擎不断学习进化，能更全面的识别用户行为，更懂用户。可根据不同用户的需求，</p>
+                                            <p>智能调配系统资源，为用户个性化定制“恰到好处”的智能解决方案，更易用、更省心、更贴心</p>
+                                            <!-- <img src="./images/xq13.png" alt="" id="imgCont3"> -->
+                                            <p>电视机</p>
+                                        </div>
+                                        <img src="./images/xq14.png" alt="" id="imgCont3">
+                                        <div class="listTitle">
+                                            <h3>电视派</h3>
+                                            <h4>看电视的新方式</h4>
+                                            <p>告别老旧的调台方式，也告别普通互联网电视瘀杂的选择界面，</p>
+                                            <p>电视派全新的手机浏览、一键推送玩法，让看什么不再是困扰。</p>
+                                        </div>
+                                        <img src="./images/xq15.png" alt="" id="imgCont4">
+                                        <div class="hint">
+                                            <p>快递为顺丰速运，一般下单后一个工作日内发出，节假日或大型活动时间顺延，以具体发货时间为准。</p>
+                                            <p class="p2">电视签收前，请务必要求快递<span>开箱通电验机</span>，确认屏幕外观完好后签收，如快递拒绝开箱，请拒收并联系本店客服处理;因未验机直接签收产生的破损问题，责任人无法划分须由客户自行承担。</p>
+                                            <p class="p3">若非电视质量问题，7天无理由退货或拒收，顾客需要承担200元/台的退货费用(包含但不限于退回运费，包装箱费用，电视折旧影响二次销售产生的费用等;拆箱后非质量问题不支持七天无理由退货）。</p>
+                                            <p class="p4"><span>订单价格不含安装费</span>，顾客签收后可拨打创维售后电话95105555或4008665555预约安装，安装后支付相关安装费用（可参考安装收费标准），外包装建议保存30天，以防退换货需要。</p>
+                                            <p class="p5">电视价格随市场价格波动，本店不提供非承诺以外的保价服务。</p>
+                                            <p class="p6">本店开具电子普通发票，客户如需获取发票，需在确认收货后提供电子邮箱，一般在10个工作日内发出。需开具专用增值税发票，需要提供抬头、税号、开户行、地址、电话、账号等信息。</p>
+                                            <span>（专用增值税发票为纸质发票，客户确认收货后联系客服寄出，寄出单号请咨询在线客服)</span>
+                                        </div>
+                                        <h2>安装收费标准：</h2>
+                                        <table border="1">
+                                            <tr class="col">
+                                                <td rowspan="2">产品尺寸段</td>
+                                                <td rowspan="2">座驾安装<br>（标配）</td>
+                                                <td colspan="2">挂架安装（最高价）</td>
+                                            </tr>
+                                            <tr class="col">
+                                                <td>含普通挂架</td>
+                                                <td>用户自备挂架</td>
+                                            </tr>
+                                            <tr>
+                                                <td>≤39时</td>
+                                                <td rowspan="4">40/台</td>
+                                                <td>80元</td>
+                                                <td>60元</td>
+                                            </tr>
+                                            <tr>
+                                                <td>39时&gt;机器≤55时</td>
+                                                <td>100元</td>
+                                                <td>80元</td>
+                                            </tr>
+                                            <tr>
+                                                <td>55时&gt;机器≤65时</td>
+                                                <td>150元</td>
+                                                <td>120元</td>
+                                            </tr>
+                                            <tr>
+                                                <td>≥65时</td>
+                                                <td>300元</td>
+                                                <td>260元</td>
+                                            </tr>
+                                        </table>
+                                        <div class="duanluo fl">
+                                            <h4>服务内容</h4>
+                                            <p>1.所有的安装服务均含免费调试服务。</p>
+                                            <p>2.用户选择非创维提供的挂架，除按照收费标准外，需与用户签订安全责任协议。</p>
+                                            <p>3.不提供厚度&gt;20cm等达不到承重要求墙体的安装服务，悬挂、内嵌式安装服务需用户先解决安装条件。安装玻璃、大理石、木质：石膏板等特殊墙体，需另外收取100元/打孔服务费。</p>
+                                            <p>4.三包有效期内，首次安装调试后30天内提供免费移机安装服务。</p>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li>产品细节</li>
+                                            <li>产品外观</li>
+                                            <li>AI系统</li>
+                                            <li>使用方式</li>
+                                            <li>温馨提示</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 结尾 -->
+    <div class="footer">
+        <div class="listFooter clearfix">
+            <dl class="fl">
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">支付方式</a></dd>
+                <dd><a href="#">配送方式</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">售后服务</a></dt>
+                <dd><a href="#">售后政策</a></dd>
+                <dd><a href="#">价格保护</a></dd>
+                <dd><a href="#">退款说明</a></dd>
+                <dd><a href="#">返修/退换货</a></dd>
+                <dd><a href="#">取消订</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">配送方式</a></dt>
+                <dd><a href="#">上门自提</a></dd>
+                <dd><a href="#">211限时达</a></dd>
+                <dd><a href="#">配送服务查询</a></dd>
+                <dd><a href="#">配送费收取标准</a></dd>
+                <dd><a href="#">海外配送</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">支付方式</a></dt>
+                <dd><a href="#">网上支付</a></dd>
+                <dd><a href="#">邮局汇款</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">用户帮助</a></dt>
+                <dd><a href="#">免费注册</a></dd>
+                <dd><a href="#">找回密码</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">优惠券使用</a></dd>
+            </dl>
+        </div>
+        <div class="line"></div>
+        <div class="bottomCont">
+            <p>copyriahto&copy; 2010-2016小U商城版权所有保留一切权利</p>
+            <p>京ICP备10218183号京ICP证161188号京公网安备11010802020593号出版物经营许可证新出泼京批字第直130052号</p>
+        </div>
+    </div>
+</body>
+
+</html>

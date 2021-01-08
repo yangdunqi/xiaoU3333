@@ -1,0 +1,411 @@
+/* 面包屑导航 */
+
+.breadcrumbs {
+    height: 24px;
+    line-height: 24px;
+    padding: 19px 0 14px 0;
+}
+
+.breadcrumbs li {
+    float: left;
+}
+
+.breadcrumbs li,
+.breadcrumbs li>a {
+    color: #606060;
+}
+
+.breadcrumbs li>i {
+    margin: 0 6px 0 8px;
+}
+
+.breadcrumbs li>span {
+    border: 1px dashed #f07e38;
+    padding: 5px 8px;
+    color: #fb6504;
+}
+
+.breadcrumbs li>span:after {
+    content: "x";
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+}
+/* .breadcrumbs li:after{content:">";margin:0 6px 0 8px;} */
+
+
+/* 筛选 */
+
+.filter_wrap {
+    border-bottom: 1px solid #e5e4e2;
+}
+
+.filter_item {
+    position: relative;
+    background-color: #fcf7f4;
+    border-top: 1px solid #e5e4e2;
+}
+
+.filter_item,
+.filter_item a {
+    line-height: 40px;
+    color: #6a6663;
+}
+
+.filter_item_hd {
+    float: left;
+    width: 100px;
+    padding-left: 20px;
+}
+
+.filter_item_hd>i {
+    color: #e5b494;
+    margin-right: 10px;
+}
+.active_first {
+    color:  red !important;
+}
+.active_second {
+    color:  red !important;
+}
+.active_third {
+    color:  red !important;
+}
+.goods_pager li#prev_next .active {
+    border-color: #f46918;
+    color: #f46918;
+}
+.filter_item_bd {
+    position: relative;
+    background: #fff;
+    margin-left: 120px;
+}
+.filter_item_list {
+    width: 1008px;
+}
+.filter_item_list>li {
+    float: left;
+    /* width: 100px; */
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.filter_item_more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #c6a089;
+    width: 62px;
+    text-align: center;
+}
+
+.filter_item_more>i {
+    vertical-align: middle;
+}
+
+.list_wrap {
+    margin-top: 20px;
+}
+
+
+/* 列表页-主体-左侧 */
+
+.list_aside {
+    float: left;
+    width: 208px;
+    border-width: 2px 1px 1px;
+    border-style: solid;
+    border-color: #ff8c4e #e3e3e3 #e3e3e3;
+}
+
+.list_aside_hd {
+    font-size: 16px;
+    color: #fb6d19;
+    padding-left: 1em;
+    font-family: "Microsoft YaHei";
+    line-height: 45px;
+}
+
+.list_aside_bd {
+    text-align: left;
+    padding: 0 16px;
+}
+
+.list_aside_bd img {
+    display: block;
+    margin: 0 auto;
+}
+
+.list_aside_item {
+    padding: 16px 0 9px;
+}
+
+.list_aside_item p {
+    padding-top: 16px;
+    line-height: 19px;
+    font-size: 12px;
+    max-height: 38px;
+    overflow: hidden;
+}
+
+.list_aside_item a {
+    color: #676767;
+}
+
+.list_aside_item .price {
+    display: block;
+    color: #f1842f;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+
+/* 列表页-主体-右侧 */
+
+.list_main {
+    float: right;
+    width: 964px;
+}
+
+.selectsort {
+    background-color: #fef9f6;
+    height: 36px;
+    padding: 9px 8px 0;
+}
+
+.sel_options {
+    float: left;
+}
+
+.sel_options>li {
+    float: left;
+    cursor: pointer;
+    padding: 0 9px;
+    min-width: 35px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    text-align: center;
+    margin-right: -1px;
+    color: #686868;
+}
+
+.sel_options>li>i {
+    vertical-align: middle;
+    color: #e5e5e5;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.sel_options>li.active {
+    color: #fc0000;
+}
+
+.sel_pager {
+    float: right;
+    height: 26px;
+    line-height: 26px;
+    padding-right: 12px;
+}
+
+.sel_pager>span {
+    float: left;
+}
+
+.sel_pg_text {
+    margin-right: 20px;
+    color: #5f5b5a;
+}
+
+.sel_pg_prev,
+.sel_pg_next {
+    cursor: pointer;
+    color: #c4c0bd;
+    font-weight: bold;
+}
+
+.sel_pg_cur {
+    padding: 0 15px;
+}
+
+.sel_pg_cur>em {
+    color: #fe6200;
+    font-weight: bold;
+}
+
+
+/* 列表页-商品列表 */
+
+.goods_list {
+    margin-top: 18px;
+}
+
+.goods_list>ul {
+    height: 300px;
+    margin-right: -13px;
+}
+
+.goods_item {
+    float: left;
+    margin-right: 7px;
+    padding: 40px 16px 15px;
+    width: 198px;
+    cursor: pointer;
+    border: 3px solid #fff;
+}
+
+.goods_intro p {
+    font-size: 12px;
+    line-height: 20px;
+    color: #707070;
+}
+
+.goods_price,
+.goods_intro span,
+.evaluate a,
+.goods_evaluate a {
+    color: #f26d22;
+}
+
+.goods_price {
+    display: block;
+    font: bold 16px/40px "微软雅黑";
+}
+
+.goods_evaluate {
+    padding-top: 9px;
+}
+
+.goods_evaluate>a {
+    font-weight: bold;
+}
+
+.goods_pic {
+    text-align: center;
+    height: 152px;
+}
+.goods_pic img {
+    width: 190px;
+    height: 140px;
+}
+
+.goods_tools {
+    margin-top: 13px;
+}
+
+.goods_tools>li {
+    float: left;
+    border: 1px solid #d8d8d8;
+    height: 28px;
+    line-height: 28px;
+    color: #646464;
+}
+
+.goods_tools>li>i {
+    display: inline-block;
+    vertical-align: -2px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    margin-right: 6px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.addcart {
+    width: 110px;
+    margin-right: -1px;
+}
+
+.favorites {
+    width: 85px;
+}
+
+.goods_item:hover {
+    border-color: #f46918;
+}
+
+.goods_item:hover .goods_tools>li {
+    border-color: #f46918;
+    color: #e26c3e;
+}
+
+.goods_item:hover .addcart>i {
+    background-color: #f46918;
+    color: #fff;
+}
+
+.goods_item:hover .addcart>i::before {
+    content: "\e602";
+}
+
+
+/* 分页 */
+
+.goods_pager {
+    padding: 48px 0;
+    font-size: 0;
+    text-align: center;
+}
+
+.goods_pager>li {
+    display: inline-block;
+    margin: 0 5px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    color: #bbb;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.goods_pager>li>span {
+    padding: 0 8px;
+}
+#prev_next {
+    position: relative;
+    max-width: 650px;
+    height: 48px;
+    
+    padding: 0;
+    border: none;
+}
+#prev_next span {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    margin: 0 5px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    color: #bbb;
+    cursor: pointer;
+    margin-top: 18px;
+    background-color: #fff;
+    
+}
+#prev_next span.list_end {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+#prev_next span:hover {
+    border-color: #f46918;
+    color: #f46918;
+}
+.goods_pager>li.tt:hover {
+    border-color: #f46918;
+    color: #f46918;
+}
+
+.firstcate,
+.secondcate,
+.thirdcate {
+    color: red !important;
+}

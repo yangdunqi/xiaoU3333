@@ -1,0 +1,81 @@
+
+.header_search{float:right;margin-top: 15px;}
+/* 购物车 头部 */
+.cart_header{padding:26px 0;}
+.cart_header .logo{height:50px;}
+.cart_header .logo{height:50px;float:left;}
+.cart_header .logo>h1{float:left;}
+.cart_header .logo>p{float:left;padding:0 20px;height:50px;line-height:50px;border-left: 1px solid #e8e8e8;margin-left: 23px;font-size: 24px;color: #636363;}
+
+/* 清单列表 */
+.order_wrap{font-family: simsun;margin-top: 18px;}
+.order_wrap [class^="col"]{float:left;text-align: center;}
+.order_hd{height:41px;background-color: #f5f5f5;}
+.order_hd>[class^="col"]{height:41px;line-height:41px;color:#6c6c6c;font-size:12px;}
+
+.col_checkbox{width:55px;padding-left:21px;}
+.col_checkbox input{vertical-align: middle;margin-right:11px;}
+.col_info{width:400px;}
+.col_price{width:170px;}
+.col_amount{width:160px;}
+.col_subtotal{width:190px;}
+.col_price,.col_subtotal{font-family: "微软雅黑";}
+.shoppinglist .col_operation{width:120px;padding-left: 70px; text-align: left;}
+
+.order_bd{padding:0 1px;}
+.order_item{padding:25px 0;border-bottom: 1px solid #e3e3e3;}
+.order_item_active{background-color: #fef9f6;}
+.info_desc{
+    width:365px;
+}
+.info_desc .info_pic{
+    float:left;
+    width:52px;
+    height:64px;
+}
+.info_desc .info_text{
+    padding-left: 14px;
+    margin-left:52px;
+    font-size: 12px;
+    line-height:18px;
+    text-align: left;
+}
+.info_desc .text a{
+    color:#31302c;
+}
+.info_desc  .property{
+    padding-top: 17px;
+    color:#87827f;
+}
+.info_desc  .property span{
+    margin-right: 24px;
+}
+.highlight{color:#f16000;}
+.col_operation a{
+    display: block;
+   line-height:24px;
+   text-align: left;
+}
+.col_subtotal{font-weight: bold;color:#f16000;font-family: "Micorosoft YaHei";font-size: 16px;}
+.num_input{margin:0 auto;width:104px;}
+
+.order_toolbar{margin-top: 40px;background-color: #f9f9f9;height:98px;color: #626262;}
+.order_toolbar_lt{float:left;line-height:48px;}
+.select_all{padding-left: 24px;float:left;color:#686868;}
+.select_all input{margin-right: 12px;}
+.operations{float:left;padding-left: 30px;}
+.order_toolbar_rt{float:right;line-height:24px;padding-top: 10px;}
+.price_sum span,.price_sum em{color:#e56c03;font-family: "Microsoft YaHei";}
+.price_sum em{font-size: 18px;}
+.amount_sum{padding-right: 10px;}
+.price_sum{padding-right: 50px;}
+.amount_sum,.price_sum{float:left;}
+
+.order_action{font-size:0;text-align: right;padding:26px 0 30px;font-family: "Microsoft YaHei";}
+.order_action a{display:inline-block;}
+.btn_back,.btn_go{
+    height:44px;line-height:44px;margin-right: 17px;border:1px solid #f06e10;
+text-align:center;font-size: 18px;}
+.btn_back{width:184px;height:44px;border:1px solid #f46a11;background-color: #f26b11;color: #fff;text-align: center;}
+.btn_go{color:#db743a;width: 184px;background-color: #fef9f6;}
+

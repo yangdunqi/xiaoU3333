@@ -1,0 +1,161 @@
+/* 统一编码 */
+@charset "utf-8";
+inner {
+    width: 1190px;
+    margin: 0 auto;
+}
+.hearr {
+    height: 108px;
+    background-color: #fff;
+}
+.hearr h1 {
+    width: 228px;
+    height: 50px;
+    margin-top: 30px;
+    border-right: 1px solid #e8e8e8;
+}
+.hearr h1>img {
+    width: 100%;
+    height: 100%;
+}
+.hearr p {
+    font: 22px/1 "微软雅黑";
+    color: #636363;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+.img {
+    width: 100%;
+    height: 448px;
+    background: url("../images/denglu.jpg") no-repeat center/100% 100%;
+}
+form {
+    width: 350px;
+    height: 377px;
+    margin: 34px auto 40px;
+    background-color: #fff;
+    border-top: 3px solid #f36e11;
+    
+}
+form h3 {
+    font: 24px/86px "微软雅黑";
+    margin-bottom: 3px;
+    text-align: center;
+}
+form ul>li {
+    width: 280px;
+    height: 50px;
+    margin: 0 auto;
+}
+form ul>li:nth-of-type(2) .text {
+    color: #d2d2d2;
+    border: 1px solid #d2d2d2;
+    background-color: #f6f6f6;
+}
+form ul>li:nth-of-type(3) input {
+    width: 206px;
+    border: 1px solid #d2d2d2;
+}
+form ul>li:nth-of-type(2) input {
+    border-color: #d2d2d2;
+}
+form ul>li>div.text {
+    width: 34px;
+    height: 34px;
+    font: 28px/34px "微软雅黑";
+    color: #fc6500;
+    border: 1px solid #fc6500;
+    text-align: center;
+    background-color: #fef9f6;
+}
+form ul>li>div img {
+    width: 70px;
+    height: 36px;
+    vertical-align: middle;
+}
+form ul>li input {
+    width: 242px;
+    height: 34px;
+    border: 1px solid #fc6500;
+    border-left: 0;
+    text-indent: 10px;
+    font: 14px/34px "微软雅黑";
+    color: #939393;
+    outline: none;
+}
+form ul>li>p {
+    font: 12px/32px "微软雅黑";
+    color: #fc6500;
+    margin-bottom: 12px;
+}
+form .btn {
+    display: block;
+    width: 286px;
+    height: 40px;
+    background-color: #f26b11;
+    font: 18px/40px "微软雅黑";
+    color: white;
+    border-radius: 4px;
+    margin-left: 36px;
+    cursor: pointer;
+    outline: none;
+}
+form>div {
+    font: 12px/1 "微软雅黑";
+    color: #3a3a3a;
+    text-align: center;
+}
+form>div>a {
+    color: #fe6007;
+    margin-left: 7px;
+}
+form .register {
+    width: 286px;
+    margin: 14px 0 19px 36px;
+}
+form .register>div {
+    font: 12px/1 "微软雅黑";
+    color: #5e5e5e;
+}
+form .register>div input {
+    margin-right: 6px;
+}
+form .line {
+    width: 100%;
+    height: 1px;
+    background-color: #efefef;
+}
+form .foot {
+    width: 286px;
+    height: 50px;
+    margin-left: 36px;
+    font: 12px/50px "微软雅黑";
+    color: #606060;
+}
+form .foot .left>a {
+    margin: 0 22px 0 6px;
+}
+form .foot .left>span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #27a6f7;
+}
+form .foot .left>.span2 {
+    background-color: #ec201f;
+}
+form .foot .left>.span3 {
+    background-color: #1ce547;
+}
+form .foot .right {
+    font: 14px/50px "微软雅黑";
+    color: #f66b10;
+}
+/* 结尾 */
+.footer {
+    background-color: #fff;
+}
+.footer .bottomCont {
+    padding-top: 26px;
+}

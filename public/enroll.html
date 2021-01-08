@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小U商城注册</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/enroll.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.md5.js"></script>
+    
+</head>
+<body>
+    <div class="hearr">
+        <div class="inner clearfix">
+            <h1 class="fl"><img src="./images/logo.png" alt="小U商城"></h1>
+            <p class="fl">欢迎注册</p>
+        </div>
+    </div>
+    <form action="#">
+        <h3>注册账号</h3>
+        <ul>
+            <li>
+                <div class="fl iconfont text">&#xe60f;</div>
+                <input type="text" placeholder="请输入邮箱" id="user">
+                <p id="userStr">请输入邮箱/由邮箱已注册/邮箱格式错误</p>
+            </li>
+            <li>
+                <div class="fl iconfont text">&#xe6a0;</div>
+                <input type="password" placeholder="密码" id="pwd">
+                <p id="pwdStr">请输入密码/密码格式为8-20位字母数组组合</p>
+            </li>
+            <li>
+                <div class="clearfix">
+                    <input class="fl" type="text" placeholder="验证码" id="inputCode">
+                    <div class="fl" id="captcha" onclick="randomCode()"><img src="./images/yanzhengma_03.png" alt=""></div>
+                </div>
+                <p id="prompt">请输入验证码</p>
+            </li>
+        </ul>
+        <a href="javascript:register();">
+            <input class="btn" type="button" value="注册" onclick="">
+        </a>
+        
+        <div>已有账号<a href="./login.html"target="_blank">登录</a></div>
+    </form>
+    <div class="footer">
+        <div class="bottomCont">
+            <p>copyriahto&copy; 2010-2016小U商城版权所有保留一切权利</p>
+            <p>京ICP备10218183号京ICP证161188号京公网安备11010802020593号出版物经营许可证新出泼京批字第直130052号</p>
+        </div>
+    </div>
+    <script src="./js/common.js"></script>
+    <script>
+        let globalCode = '';
+        // 验证码
+        async function randomCode() {
+            let [err, arr] = await sendAjax('/createcode');
+            $('#captcha').html(arr.data.img);
+            globalCode = arr.data.txt;
+        };
+        randomCode();
+        // 定义函数判断基本数据格式是否争取
+        async function register() {
+            // 获取邮箱及密码 验证码等数据
+            let user = $('#user').val();
+            let pwd = $('#pwd').val();
+            let inputCode = $('#inputCode').val();
+            // 验证验证码
+            if (inputCode.toLowerCase() == globalCode.toLowerCase()) {
+                $('#prompt').hide();
+            } else {
+                $('#prompt').show().html('验证码错误').css('color', 'red');
+                $('#inputCode').html('');
+                randomCode();
+                return;
+            }
+            // 判断邮箱
+            let userReg = /^[a-zA-Z]\w{3,15}$/;
+            if (userReg.test(user)) { // 满足条件
+                $('#userStr').html('用户名格式正确').css('color', 'green');
+            } else {
+                return $('#userStr').html('用户名格式错误/字母开头4-8个字符').css('color', 'red');
+            }
+            // 验证密码
+            if (/^\w{6,16}$/.test(pwd)) {
+                $('#pwdStr').html('密码格式正确').css('color', 'green');
+            } else {
+                return $('#pwdStr').html('密码格式错误/6-16字符').css('color', 'red');
+            }
+            
+            pwd = $.md5(pwd);
+            let [err, arr] = await sendAjax('/register', {
+                user,
+                pwd,
+                inputCode
+            }, 'post');
+            if (arr.code == 200) { // 用户名未被注册
+                alert('注册成功');
+                $('#user').val('');
+                $('#pwd').val('');
+                $('#inputCode').val('');
+                location.href='./login.html';
+            } else {
+                $('#userStr').html('用户名已注册').css('color', 'red');
+            }
+        };
+    </script>
+</body>
+</html>

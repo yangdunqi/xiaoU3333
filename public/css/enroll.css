@@ -1,0 +1,115 @@
+/* 统一编码 */
+@charset "utf-8";
+body {
+    background-color: #f6f6f6;
+}
+.inner {
+    width: 1190px;
+    margin: 0 auto;
+}
+.hearr {
+    height: 108px;
+    background-color: #fff;
+}
+.hearr h1 {
+    width: 228px;
+    height: 50px;
+    margin-top: 30px;
+    border-right: 1px solid #e8e8e8;
+}
+.hearr h1>img {
+    width: 100%;
+    height: 100%;
+}
+.hearr p {
+    font: 22px/1 "微软雅黑";
+    color: #636363;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+form {
+    width: 754px;
+    height: 478px;
+    margin: 34px auto 40px;
+    background-color: #fff;
+    border-top: 3px solid #f36e11;
+    
+}
+form h3 {
+    font: 24px/86px "微软雅黑";
+    margin-bottom: 3px;
+    text-align: center;
+}
+form ul>li {
+    width: 378px;
+    height: 80px;
+    margin: 0 auto;
+}
+form ul>li:nth-of-type(2) .text {
+    color: #d2d2d2;
+    border: 1px solid #d2d2d2;
+    background-color: #f6f6f6;
+}
+form ul>li:nth-of-type(3) input {
+    width: 206px;
+    border: 1px solid #d2d2d2;
+}
+form ul>li:nth-of-type(2) input {
+    border-color: #d2d2d2;
+}
+form ul>li>div.text {
+    width: 34px;
+    height: 34px;
+    font: 28px/34px "微软雅黑";
+    color: #fc6500;
+    border: 1px solid #fc6500;
+    text-align: center;
+    background-color: #fef9f6;
+}
+form ul>li>div img {
+    vertical-align: middle;
+}
+form ul>li input {
+    width: 341px;
+    height: 34px;
+    border: 1px solid #fc6500;
+    border-left: 0;
+    text-indent: 10px;
+    font: 14px/34px "微软雅黑";
+    color: #939393;
+    outline: none;
+}
+form ul>li>p {
+    font: 12px/32px "微软雅黑";
+    color: #fc6500;
+    margin-bottom: 12px;
+}
+form .btn {
+    display: block;
+    width: 384px;
+    height: 44px;
+    background-color: #f26b11;
+    font: 18px/44px "微软雅黑";
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 auto 35px;
+    cursor: pointer;
+    outline: none;
+}
+form>div {
+    font: 12px/1 "微软雅黑";
+    color: #3a3a3a;
+    text-align: center;
+}
+form>div>a {
+    color: #fe6007;
+    margin-left: 7px;
+}
+/* 结尾 */
+.footer {
+    background-color: #fff;
+}
+.footer .bottomCont {
+    padding-top: 36px;
+}

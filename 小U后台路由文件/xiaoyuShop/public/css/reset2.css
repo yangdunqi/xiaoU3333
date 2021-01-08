@@ -1,0 +1,43 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+    margin: 0;
+}
+ul,ol{
+    list-style: none;
+    padding: 0;
+}
+table{
+    border-collapse: collapse;
+}
+em,i{
+   font-style: normal; 
+}
+strong,b{
+    font-weight: normal;
+}
+
+a{
+    text-decoration: none;
+    color: #999;
+}
+
+input{
+    padding: 0;
+    border: 1px solid #666;
+    outline: none;
+}
+textarea{
+    resize: none;
+    outline: none;
+}
+img{
+    vertical-align: top;
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}

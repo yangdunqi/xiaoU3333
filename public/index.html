@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小U商城</title>
+    <meta name="description" content="小U商城、生活百货啥都有">
+    <meta name="keywords" content="手机、数码、衣服、众多商品任你选购">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./swiper-master/package/swiper-bundle.min.css">
+    <script src="./swiper-master/package/swiper-bundle.min.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<script>
+   
+
+
+    // 判断是否有用户登录
+    (async function () {
+        let [err, arr] = await sendAjax('/testjst');
+        if (arr.code == 200) {
+            $('#uname_id>.uname_uid').hide();
+            $('#uname_id').prepend(`<li class="butan" >
+                    <a href="#" class="a4"style="color: red;">欢迎用户${arr.data.uname}</a>
+                </li>`);
+        }
+    })();
+</script>
+
+<body>
+    <!-- 定义头部导航栏 -->
+    <div class="topnav">
+        <div class="inner clearfix">
+            <ul class="left fl">
+                <li class="iconfont">
+                    <a href="#">网站导航</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <a href="#">商家入驻</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <a href="#">客户服务</a>&#xe773;
+                </li>
+                <li class="iconfont">
+                    <span class="dis">&#xe61e;</span>
+                    <a href="#">北京</a><span class="jt">&#xe772;</span>
+                </li>
+            </ul>
+            <ul class="right fr" id="uname_id">
+                <li class="iconfont uname_uid">
+                    <a href="./login.html" target="_blank">请登录</a>
+                </li>
+                <li class="iconfont uname_uid">
+                    <a href="./enroll.html" target="_blank">注册有礼</a>
+                </li>
+                <li class="iconfont" id="Uname">
+                    <a href="#">我的订单</a><span>&#xe773;</span>
+                </li>
+                <li class="iconfont">
+                    <a href="#">我的易购</a><span>&#xe773;
+                    </span>
+
+                </li>
+                <li class="iconfont">
+                    <a href="#">小U会员</a>
+                </li>
+                <li class="iconfont">
+                    &#xe6aa;
+                    <a href="./shopping.html" target="_blank">购物车 0</a>
+                    &#xe773;
+
+                </li>
+                <li class="iconfont">
+                    <a href="#">易付宝</a>
+                </li>
+                <li class="iconfont">
+                    <a href="#">企业采购</a>
+                </li>
+                <li class="iconfont">
+                    <a href="#">手机小U</a><span>&#xe773;
+                    </span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 头部搜索框 -->
+    <div class="header">
+        <div class="inner clearfix">
+            <div class="top">
+                <h1 class="fl"><img src="./images/logo.png" alt="小U商城"></h1>
+                <div class="left fl">
+                    <form action="#" class="clearfix">
+                        <span class="iconfont">&#xe616;
+                        </span>
+                        <input type="text" placeholder="跨店每300减30" id="index_ipt" onfocus="gotoShow(this)">
+                        <input type="button" value="搜索" id="index_submit">
+                    </form>
+                    <ul class="list clearfix" id="daohang">
+                        <li><a href="#">手机</a></li>
+                        <li><a href="#">电动牙刷</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">海尔空调</a></li>
+                        <li><a href="#">洗衣机</a></li>
+                        <li><a href="#">茅台</a></li>
+                        <li><a href="#">热水器</a></li>
+                        <li><a href="#">ipad</a></li>
+                        <li><a href="#">微波炉</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom clearfix">
+                <div class="title clearfix fl">
+                    <h2 class="fl iconfont">&#xe608;&nbsp; 全部商品分类</h2>
+                    <ul class="listNav">
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">手机</a></li>
+                                <li><a href="#">运营商</a></li>
+                                <li><a href="#">智能数码</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">空调</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">冰箱</a></li>
+                                <li><a href="#">洗衣机</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">厨卫大电</a></li>
+                                <li><a href="#">生活家电</a></li>
+                                <li><a href="#">厨具</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">电脑办公</a></li>
+                                <li><a href="#">相机</a></li>
+                                <li><a href="#">DIY</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">家居</a></li>
+                                <li><a href="#">家具</a></li>
+                                <li><a href="#">家装</a></li>
+                                <li><a href="#">家纺</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">食品</a></li>
+                                <li><a href="#">酒水</a></li>
+                                <li><a href="#">生鲜</a></li>
+                                <li><a href="#">特产</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">美妆</a></li>
+                                <li><a href="#">个护</a></li>
+                                <li><a href="#">清洁</a></li>
+                                <li><a href="#">宠物</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">母婴</a></li>
+                                <li><a href="#">玩具</a></li>
+                                <li><a href="#">车床</a></li>
+                                <li><a href="#">童装</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">运动</a></li>
+                                <li><a href="#">户外</a></li>
+                                <li><a href="#">足球</a></li>
+                                <li><a href="#">跑步机</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">男装</a></li>
+                                <li><a href="#">女装</a></li>
+                                <li><a href="#">内衣</a></li>
+                                <li><a href="#">鞋靴</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">箱包</a></li>
+                                <li><a href="#">钟表</a></li>
+                                <li><a href="#">珠宝</a></li>
+                                <li><a href="#">艺术</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">汽车</a></li>
+                                <li><a href="#">汽摩</a></li>
+                                <li><a href="#">二手车</a></li>
+                                <li><a href="#">车品</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">图书</a></li>
+                                <li><a href="#">艺术</a></li>
+                                <li><a href="#">原版</a></li>
+                                <li><a href="#">文学</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">医药健康</a></li>
+                                <li><a href="#">计生情趣</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li><a href="#">理财</a></li>
+                                <li><a href="#">分期</a></li>
+                                <li><a href="#">保险</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="list-right clearfix">
+                    <li><a href="#">限时抢购</a></li>
+                    <li><a href="#">红孩子</a></li>
+                    <li><a href="#">小U超市</a></li>
+                    <li><a href="#">电器城</a></li>
+                    <li><a href="#">生活家电</a></li>
+                    <li><a href="#">时尚服饰</a></li>
+                    <li><a href="#">金融</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="scroll-menu">
+        <div class="inner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 主体内容 -->
+    <div class="main">
+        <div class="inner">
+            <!-- 第一部分 one_list -->
+            <div class="one_list clearfix" id="one">
+                <div class="left fl">
+                    <div class="topTitle">
+                        <img src="./images/xianshi.png" alt="限时抢购" class="fl">
+                        <div class="text fl">距离下场</div>
+                        <div class="imgTimer fl">
+                            <span class="span1">03</span>
+                            <span class="span2">41</span>
+                            <span class="span3">16</span>
+                        </div>
+                        <div class="right fr">
+                            <div class="imgText fl">16:00场-正在疯抢</div>
+                            <div class="text fr">20:00场-即将开枪</div>
+                        </div>
+                    </div>
+                    <div class="bottom clearfix" id="xsqgCont">
+
+                        <!-- 使用template模板引擎 -->
+                        <script type="text/html" id="xsqg_temp">
+                            {{ each first_qg value index }}
+                            <div class="content fl" goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                <img src={{ value.image_url }} alt="艾草">
+                                <p>{{ value.goods_name }}</p>
+                                <div class="number">
+                                    <span>￥{{ value.goods_price }}</span>
+                                    <del>￥{{ value.assem_price }}</del>
+                                </div>
+                                <div class="bottom">
+                                    <div class="line fl">
+                                        <div></div>
+                                    </div>
+                                    <div class="text fr">已抢36%</div>
+                                </div>
+                            </div>
+                            {{ /each }}
+                        </script>
+                        <div class="content fl">
+                            <img src="./images/aicao.png" alt="艾草">
+                            <p>壹宝泡脚足浴包艾草艾叶藏</p>
+                            <div class="number">
+                                <span>￥7.5</span>
+                                <del>￥17.8</del>
+                            </div>
+                            <div class="bottom">
+                                <div class="line fl">
+                                    <div></div>
+                                </div>
+                                <div class="text fr">已抢36%</div>
+                            </div>
+                        </div>
+                        <div class="content fl">
+                            <img src="./images/latiao.png" alt="艾草">
+                            <p>金磨坊 劲道牛肉丸 90g</p>
+                            <div class="number">
+                                <span>￥3.8</span>
+                                <del>￥14.5</del>
+                            </div>
+                            <div class="bottom">
+                                <div class="line fl line2">
+                                    <div></div>
+                                </div>
+                                <div class="text fr">已抢35%</div>
+                            </div>
+                        </div>
+                        <div class="content fl">
+                            <img src="./images/jiemianru.png" alt="身体乳">
+                            <p>山羊奶身体乳保湿滋润香体</p>
+                            <div class="number">
+                                <span>￥9.9</span>
+                                <del>￥29.9</del>
+                            </div>
+                            <div class="bottom">
+                                <div class="line fl line3">
+                                    <div></div>
+                                </div>
+                                <div class="text fr">已抢46%</div>
+                            </div>
+                        </div>
+                        <div class="content fl">
+                            <img src="./images/cuozao.png" alt="毛巾架">
+                            <p>优勤毛巾架免打孔卫生间太</p>
+                            <div class="number">
+                                <span>￥14.8</span>
+                                <del>￥39.6</del>
+                            </div>
+                            <div class="bottom">
+                                <div class="line fl line4">
+                                    <div></div>
+                                </div>
+                                <div class="text fr">已抢45%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right fr">
+                    <div class="topTitle">
+                        <h3 class="fl">大聚惠</h3>
+                        <div class="iconfont fr">更多&#xe76f;</div>
+                    </div>
+                    <div class="img">
+                        <div class="text">
+                            <div>
+                                <div class="szs"></div>
+                                <p>满400减380</p>
+                                <p class="text">仅剩<span>1天</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list clearfix">
+                        <li>
+                            <img class="img1" src="./images/sanzhisongshu_03.png" alt="三只松鼠">
+                            <p>满400减280</p>
+                        </li>
+                        <li>
+                            <img src="./images/apple.jpg" alt="苹果">
+                            <p>官网价直降</p>
+                        </li>
+                        <li>
+                            <img src="./images/wi.jpg" alt="口腔">
+                            <p>爆款10.9元起</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 第二部分排行榜与人气好货 -->
+            <div class="two_list" id="two">
+                <!-- 左边区域 -->
+                <div class="leftContent fl">
+                    <div class="title clearfix">
+                        <h3 class="fl">排行榜</h3>
+                        <div class="iconfont fr">更多&#xe76f;</div>
+                    </div>
+                    <div class="mainContent" id="phb_Cont">
+
+                        <!-- 使用template模板引擎 -->
+                        <script type="text/html" id="phb_temp">
+                            <!-- 排行榜标题 -->
+                        <ul class="list-top clearfix">
+                            {{ each data value index }}
+                            <li>{{ value.second_name }}</li>
+                            {{ /each }}
+                        </ul>
+                        <!-- 里面内容 -->
+                        <div class="listMain">
+                            {{ each data value index1 }}
+                            <div class="listBox">
+                                {{ each value.data value index2 }}
+                                <div class="content clearfix" goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                    <img class="fl" src={{value.image_url}} alt="瓜子">
+                                    <div class="right fr">
+                                        <p>{{value.goods_name}}</p>
+                                        <div>
+                                            <span>￥{{value.goods_price}}</span>
+                                            <div class="text fr">{{data[index1].second_name}}商品销量NO{{index2+1}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ /each }}
+                                <div class="button clearfix">
+                                    <div class="foucs"></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            {{ /each }}
+                        </div>
+                        </script>
+                        <ul class="list-top clearfix">
+                            <li>精选</li>
+                            <li>休闲食品</li>
+                            <li>纸品清洁</li>
+                            <li>苏宁生鲜</li>
+                        </ul>
+                        <div class="listMain">
+                            <div class="content clearfix">
+                                <img class="fl" src="./images/guazi.png" alt="瓜子">
+                                <div class="right fr">
+                                    <p>恰恰香 瓜子308g袋装 坚果炒货治治出品</p>
+                                    <div>
+                                        <span>￥9.90</span>
+                                        <div class="text fr">休闲食品销量NO1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content clearfix">
+                                <img class="fl" src="./images/xiyiye.png" alt="洗衣液">
+                                <div class="right fr">
+                                    <p>金纺衣物柔顺剂亲肤系列纯净温和衣物护理剂4L婴幼儿衣物及内衣适用（新老包装随</p>
+                                    <div>
+                                        <span>￥39.90</span>
+                                        <div class="text fr">纸巾清洁销量NO1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content clearfix last">
+                                <img class="fl" src="./images/shala.png" alt="苏宁生鲜">
+                                <div class="right fr">
+                                    <p>凤祥食品(Fovo Foods）鸡翅中1kg出口日本级 烧烤食材鸡翅 烤鸡翅炸翅中卤鸡翅 卤味</p>
+                                    <div>
+                                        <span>￥79.80</span>
+                                        <div class="text fr">苏宁生鲜销量NO1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button clearfix">
+                                <div class="foucs"></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右边区域 人气好货 -->
+                <div class="rightContent fr">
+                    <div class="title clearfix">
+                        <h3 class="fl">人气好货</h3>
+                        <div class="iconfont fr">更多&#xe76f;</div>
+                    </div>
+                    <ul class="listMenu" id="rqhh_menu">
+                        <!-- 使用template模板引擎 -->
+                        <script type="text/html" id="rqhh_temp">
+                            {{ each data value index }}
+                            <li goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                <img src={{ value.image_url }} alt="男装">
+                                <p>{{ value.goods_name }}</p>
+                                <div>今日特价4.5折起</div>
+                            </li>
+                            {{ /each }}
+                        </script>
+
+                        <li>
+                            <img src="./images/kuzi.png" alt="男装">
+                            <p>鸭鸭</p>
+                            <div>今日特价4.5折起</div>
+                        </li>
+                        <li>
+                            <img src="./images/maoj.png" alt="枕头">
+                            <p>PATEX</p>
+                            <div>大牌精选2.5折超</div>
+                        </li>
+                        <li>
+                            <img src="./images/nuanfen.png" alt="循环扇">
+                            <p>爱家乐遥控空气循环扇</p>
+                            <div class="iconfont color">&#xe607;665人都说好</div>
+                        </li>
+                        <li class="last">
+                            <img src="./images/caiban.png" alt="砧板">
+                            <p>双立人砧板套装</p>
+                            <div class="iconfont color">&#xe607;358人都说好</div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/wazi.png" alt="七匹狼">
+                            <p>七匹狼</p>
+                            <div>爆款直降2.0折起</div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/xiangzi.png" alt="OSDY">
+                            <p>OSDY</p>
+                            <div>限时抢购1.1折起</div>
+                        </li>
+                        <li class="end">
+                            <img class="weitiao" src="./images/touying.png" alt="投影仪">
+                            <p>爱普生高端工程投影仪</p>
+                            <div class="iconfont color">&#xe607;372人都说好</div>
+                        </li>
+                        <li class="last end">
+                            <img class="weitiao" src="./images/xiwanji.jpg" alt="洗碗机">
+                            <p> 凯伍德智能家用厨师机</p>
+                            <div class="iconfont color">&#xe607;373人都说好</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 第三部分 -->
+            <div class="public_list clearfix">
+                <div class="inner clearfix">
+                    <img class="fl" src="./images/img1.jpg" alt="">
+                    <img class="fl" src="./images/img2.jpg" alt="">
+                    <img class="fl end" src="./images/img3.jpg" alt="">
+                </div>
+            </div>
+            <!--第四部分 -->
+            <div class="four_list" id="three">
+                <div class="inner clearfix">
+                    <div class="left_img fl">
+                        <img src="./images/find01.png" alt="">
+                    </div>
+                    <div class="rightMenu fr">
+                        <ul class="right_list clearfix fr">
+                            <li>
+                                <p>黑街多功能变形轮滑鞋</p>
+                                <img src="./images/lunhuaxie.png" alt="轮滑鞋">
+                            </li>
+                            <li>
+                                <img src="./images/shancun.png" alt="闪存">
+                                <p>闪迪固态闪存盘</p>
+                            </li>
+                            <li>
+                                <p>MAC圣诞限量口红...</p>
+                                <img src="./images/kouhong.png" alt="kou">
+                            </li>
+                            <li>
+                                <img src="./images/jianceyi.png" alt="环境猫小巧便携检测仪">
+                                <p>环境猫小巧便携检测仪</p>
+                            </li>
+                            <li>
+                                <p>闪迪快速传输文件存...</p>
+                                <img src="./images/chucunka.png" alt="闪迪快速传输文件存">
+                            </li>
+                        </ul>
+                        <div class="line">
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 第五部分 服装配饰-->
+            <div class="five_list clearfix" id="four">
+                <!-- template模板 -->
+                <script type="text/html" id="four_temp">
+                    {{ each data value index }}
+                    <div class="leftMenuCont fl">
+                        <div class="title  clearfix">
+                            <h3 class="fl iconfont">{{ value.second_name }} &#xe61a;</h3>
+                            <div class="fr">
+
+                                {{ each value.cate_thired val indx }}
+                                <div>{{ val.thired_name }}</div>
+                                {{ /each }}
+                            </div>
+                        </div>
+                        <div class="bottomMenu fl">
+                            <div class="img fl"
+                                style="background: url('{{ value.goods_list[0].image_url }}') no-repeat center/100% 100%;">
+                                <div>
+                                    <h4>{{ value.second_name }}</h4>
+                                </div>
+                            </div>
+                            <ul class="right-content fr">
+                                {{ each value.goods_list val index }}
+                                <li goods_id={{ val.goods_id }} onclick="toShow(this)">
+                                    <div>{{ val.goods_name }}</div>
+                                    <p>2件3折</p>
+                                    <img src={{ val.image_url }} alt="森马">
+                                </li>
+                                {{ /each }}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{ /each }}
+                </script>
+                <div class="leftMenuCont fl">
+                    <div class="title  clearfix">
+                        <h3 class="fl iconfont">服装配饰 &#xe61a;</h3>
+                        <div class="fr">
+                            <div>骆驼鞋靴</div>
+                            <div>珠宝年货节</div>
+                            <div>洁丽雅</div>
+                            <div>海澜之家</div>
+                        </div>
+                    </div>
+                    <div class="bottomMenu fl">
+                        <div class="img fl">
+                            <div>
+                                <h4>珠宝年货节</h4>
+                                <p>每400减50</p>
+                            </div>
+                        </div>
+                        <ul class="right-content fr">
+                            <li>
+                                <div>森马</div>
+                                <p>2件3折</p>
+                                <img src="./images/senma.png" alt="森马">
+                            </li>
+                            <li>
+                                <div>波司登</div>
+                                <p>满600减50</p>
+                                <img src="./images/bosideng.png" alt="波司登">
+                            </li>
+                            <li>
+                                <div>雪中飞</div>
+                                <p>满399减200</p>
+                                <img src="./images/xuezhongfei.png" alt="雪中飞">
+                            </li>
+                            <li>
+                                <div>周大生</div>
+                                <p>满399减30</p>
+                                <img src="./images/yufo.png" alt="周大生">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="leftMenuCont right-pulic fr ">
+                    <div class="title  clearfix">
+                        <h3 class="fl iconfont">运动户外 &#xe61a;</h3>
+                        <div class="fr">
+                            <div>鸿星尔克</div>
+                            <div>斯凯奇</div>
+                            <div>耐克</div>
+                            <div>阿迪达斯</div>
+                        </div>
+                    </div>
+                    <div class="bottomMenu fl">
+                        <div class="img fl">
+                            <div>
+                                <h4>土拨鼠</h4>
+                            </div>
+                        </div>
+                        <ul class="right-content fr">
+                            <li>
+                                <div>特步</div>
+                                <p>暖冬钜惠</p>
+                                <img src="./images/tebu.png" alt="特步">
+                            </li>
+                            <li>
+                                <div>李宁</div>
+                                <p>狂欢不停歇</p>
+                                <img src="./images/lining.png" alt="李宁">
+                            </li>
+                            <li>
+                                <div>威克多</div>
+                                <p>低至5折</p>
+                                <img src="./images/weikeduo.png" alt="威克多">
+                            </li>
+                            <li>
+                                <div>名鞋库</div>
+                                <p>满299减60</p>
+                                <img src="./images/mingxie.png" alt="名鞋库">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="leftMenuCont fl">
+                    <div class="title  clearfix">
+                        <h3 class="fl iconfont">金融 &#xe61a;</h3>
+                        <div class="fr">
+                            <div>满200减50</div>
+                            <div>抽华为</div>
+                            <div>888元红包</div>
+                            <div>20%返利</div>
+                        </div>
+                    </div>
+                    <div class="bottomMenu fl">
+                        <div class="img fl">
+                            <div>
+                                <h4>30天借款免息</h4>
+                                <p>任信贷新客专享</p>
+                            </div>
+                        </div>
+                        <ul class="right-content fr">
+                            <li>
+                                <div>用苏宁支付</div>
+                                <p>采购年货更省钱</p>
+                                <img src="./images/moubao.png" alt="用苏宁支付">
+                            </li>
+                            <li>
+                                <div>赢888元红包</div>
+                                <p>满600减50</p>
+                                <img src="./images/888.png" alt="红包">
+                            </li>
+                            <li>
+                                <div>购延保赢豪礼</div>
+                                <p>抽戴森吸尘器</p>
+                                <img src="./images/haoli.png" alt="豪礼">
+                            </li>
+                            <li>
+                                <div>最高20%返利</div>
+                                <p>品牌卡购物折上折</p>
+                                <img src="./images/fanli.png" alt="返利">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="leftMenuCont right-pulic fr ">
+                    <div class="title  clearfix">
+                        <h3 class="fl iconfont">阅读 &#xe61a;</h3>
+                        <div class="fr">
+                            <div>经营励志</div>
+                            <div>童书</div>
+                            <div>文学</div>
+                            <div>教辅</div>
+                            <div>人文社科</div>
+                        </div>
+                    </div>
+                    <div class="bottomMenu fl">
+                        <div class="img fl">
+                            <div>
+                                <h4>苏宁图书</h4>
+                                <p>阅享好书</p>
+                            </div>
+                        </div>
+                        <ul class="right-content fr">
+                            <li>
+                                <div>果麦文化</div>
+                                <p>更好的精神食粮</p>
+                                <img src="./images/guomai.png" alt="果麦文化">
+                            </li>
+                            <li>
+                                <div>华研图书</div>
+                                <p>轻松考高分</p>
+                                <img src="./images/huayan.png" alt="华研图书">
+                            </li>
+                            <li>
+                                <div>看客图书</div>
+                                <p>童书天地</p>
+                                <img src="./images/tushu.png" alt="看客图书">
+                            </li>
+                            <li>
+                                <div>童书频道</div>
+                                <p>孩子的书都在这里</p>
+                                <img src="./images/youer.png" alt="童书频道">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 第七部分 -->
+            <div class="public_list clearfix">
+                <div class="inner clearfix">
+                    <img class="fl" src="./images/img1.jpg" alt="">
+                    <img class="fl" src="./images/img2.jpg" alt="">
+                    <img class="fl end" src="./images/img3.jpg" alt="">
+                </div>
+            </div>
+            <!-- 第八部分 -->
+            <div class="eight_list" id="five">
+                <div class="inner">
+                    <h3>猜你喜欢</h3>
+                    <ul class="menu clearfix" id="goods_menu">
+                        <!-- template模板引擎 -->
+                        <script type="text/html" id="goods_temp">
+                            {{ each data value index }}
+                            <li goods_id={{ value.goods_id }} onclick="toShow(this)">
+                                <img src={{ value.image_url }} alt="乌江">
+                                <p>{{ value.goods_name }}</p>
+                                <div class="service clearfix">
+                                    <div class="text fl">{{ value.goods_price }}</div>
+                                    <div class="linee fr">找相似</div>
+                                </div>
+                                <div class="newList clearfix">
+                                    <div>
+                                        <span>补贴</span>每300-30
+                                    </div>
+                                    <div>
+                                        <span>领劵30-3</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            {{ /each }}
+                        </script>
+                        <li>
+                            <img src="./images/wujiang.png" alt="乌江">
+                            <p>乌江涪睦榨蒸脆口榨菜150g*10袋球佐餐咸菜下饭菜榨菜块</p>
+                            <div class="service clearfix">
+                                <div class="text fl">35.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>补贴</span>每300-30
+                                </div>
+                                <div>
+                                    <span>领劵30-3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/jinlongyu.png" alt="金龙鱼">
+                            <p><span></span>金龙鱼盘锦大米5kg袋装蟹稻共生东北大米粳来超市自营</p>
+                            <div class="service clearfix">
+                                <div class="text fl">29.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/sanzhisongshu.png" alt="乌江">
+                            <p>【三只松鼠_萌心团子138g】糖果棉花糖干吃汤圆糕点草莓味麻彗糯来糍</p>
+                            <div class="service clearfix">
+                                <div class="text fl">25.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>大聚惠</span>
+                                </div>
+                                <div>
+                                    <span>领劵75-8</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/jizhua.png" alt="乌江">
+                            <p>乌江涪陵榨菜微辣榨菜丝80g*10袋开味佐餐下饭菜咸菜小菜</p>
+                            <div class="service clearfix">
+                                <div class="text fl">25.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>补贴</span>每300-30
+                                </div>
+                                <div>
+                                    <span>领劵39-3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <img src="./images/tiaoheyou.png" alt="金龙鱼">
+                            <p><span></span>中粮福临门非转基因压榨玉米油4.5L/桶物理压榨—级家用食用</p>
+                            <div class="service clearfix">
+                                <div class="text fl">46.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>领劵88-10</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/hongsenf.png" alt="乌江">
+                            <p>农天山录大杰明喊性饮用水5L~41桶整箱 免邮</p>
+                            <div class="service clearfix">
+                                <div class="text fl">35.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/tiaoheyou.png" alt="金龙鱼">
+                            <p>海天酱油味极鲜酱油1.9L 特级生抽酿造酱油厨房炒菜调料酱香酱油调</p>
+                            <div class="service clearfix">
+                                <div class="text fl">24.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>领劵50-2</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/sanzhisongshu.png" alt="乌江">
+                            <p><span></span>恒都 阿根廷牛腱子1kg</p>
+                            <div class="service clearfix">
+                                <div class="text fl">89.80</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>大聚惠</span>
+                                </div>
+                                <div>
+                                    <span>满1件打7折</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/jizhua.png" alt="乌江">
+                            <p>【真心瓜子500g*4袋】焦糖/山核桃味/五香/原味瓜子500g 婪花籽坚</p>
+                            <div class="service clearfix">
+                                <div class="text fl">36.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>拼购</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <img src="./images/tiaoheyou.png" alt="金龙鱼">
+                            <p><span></span>农夫山泉饮用天然水塑膜量贩装550ml*12瓶饮用水</p>
+                            <div class="service clearfix">
+                                <div class="text fl">21.50</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/xiangmanyuan.png" alt="乌江">
+                            <p><span></span>香满园面粉美味富强粉5kg/袋中筋面粉冢用小麦粉面条包子饺</p>
+                            <div class="service clearfix">
+                                <div class="text fl">19.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/mangguo.png" alt="金龙鱼">
+                            <p>百草味蜜践芒果干60g 休闲零食特产蜜饯果脯水果干食品任选</p>
+                            <div class="service clearfix">
+                                <div class="text fl">19.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>99元16件</span>
+                                </div>
+                                <div>
+                                    <span>领劵88-5</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/jianguo.png" alt="乌江">
+                            <p>百草味坚果每日坚果50g(成人款）混合坚果综合干果仁成人款小</p>
+                            <div class="service clearfix">
+                                <div class="text fl">39.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>99元16件</span>
+                                </div>
+                                <div>
+                                    <span>领劵88-5</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="end">
+                            <img src="./images/youlemei.png" alt="乌江">
+                            <p>经典原味30杯香飘飘奶茶整箱30杯草莓麦啻香芋原味美味组合装早餐冲</p>
+                            <div class="service clearfix">
+                                <div class="text fl">98.00</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                        </li>
+                        <li class="end last">
+                            <img src="./images/quqi.png" alt="金龙鱼">
+                            <p><span></span>【三只松鼠_英越莓曲奇饼100g】办公室休闲零食早餐饼干</p>
+                            <div class="service clearfix">
+                                <div class="text fl">18.90</div>
+                                <div class="linee fr">找相似</div>
+                            </div>
+                            <div class="newList clearfix">
+                                <div>
+                                    <span>大聚惠</span>
+                                </div>
+                                <div>
+                                    <span>领劵78-5</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="bottom_line">
+                        <div class="fl"></div>
+                        <span>END</span>
+                        <div class="fr"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 结尾 -->
+    <div class="footer">
+        <div class="listFooter clearfix">
+            <dl class="fl">
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">支付方式</a></dd>
+                <dd><a href="#">配送方式</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">售后服务</a></dt>
+                <dd><a href="#">售后政策</a></dd>
+                <dd><a href="#">价格保护</a></dd>
+                <dd><a href="#">退款说明</a></dd>
+                <dd><a href="#">返修/退换货</a></dd>
+                <dd><a href="#">取消订</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">配送方式</a></dt>
+                <dd><a href="#">上门自提</a></dd>
+                <dd><a href="#">211限时达</a></dd>
+                <dd><a href="#">配送服务查询</a></dd>
+                <dd><a href="#">配送费收取标准</a></dd>
+                <dd><a href="#">海外配送</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">支付方式</a></dt>
+                <dd><a href="#">网上支付</a></dd>
+                <dd><a href="#">邮局汇款</a></dd>
+            </dl>
+            <dl class="fl">
+                <dt><a href="#">用户帮助</a></dt>
+                <dd><a href="#">免费注册</a></dd>
+                <dd><a href="#">找回密码</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">优惠券使用</a></dd>
+            </dl>
+        </div>
+        <div class="line"></div>
+        <div class="bottomCont">
+            <p>copyriahto&copy; 2010-2016小U商城版权所有保留一切权利</p>
+            <p>京ICP备10218183号京ICP证161188号京公网安备11010802020593号出版物经营许可证新出泼京批字第直130052号</p>
+        </div>
+    </div>
+    <!-- 固定定位 -->
+    <ul class="list-fiexd">
+        <li><a href="#one">特色优选</a></li>
+        <li><a href="#two">发现好货</a></li>
+        <li><a href="#three">服饰运动</a></li>
+        <li><a href="#four">金融阅读</a></li>
+        <li><a href="#five">猜你喜欢</a></li>
+        <li class="iconfont text">&#xe76c;<a href="#">顶部</a></li>
+    </ul>
+</body>
+
+</html>
